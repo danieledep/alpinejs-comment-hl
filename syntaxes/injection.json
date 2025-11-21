@@ -54,7 +54,7 @@
           },
           "patterns": [
             {
-              "begin": "\\{?(?=\\s*(?://|/\\*)\\s*(?:MARK:\\s*)?(?:javascript|js))",
+              "begin": "\\{?(?=\\s*(?://|/\\*)\\s*(?:#region|MARK:)?\\s*(?:javascript|js))",
               "end": "(?=\")",
               "contentName": "meta.embedded.inline.alpinejs",
               "patterns": [
@@ -62,6 +62,17 @@
                   "include": "source.js"
                 }
               ]
+            },
+            {
+              "match": "(.*?)((?://|/\\*)[^\r\n]*)",
+              "captures": {
+                "1": {
+                  "name": "string.quoted.double.html"
+                },
+                "2": {
+                  "name": "comment.line.double-slash.js meta.block.js meta.embedded.inline.alpinejs"
+                }
+              }
             },
             {
               "match": "[^\"\\{]+|\\{(?!%\\s*comment|#)",
