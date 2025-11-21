@@ -9,6 +9,15 @@ Add Javascript syntax highlighting for [Alpine JS](https://alpinejs.dev/) `x-` a
   }"
 ```
 
+It also adds normal greyed-out comments inside the `x-` attributes that don't trigger the Javascript syntax highlighting.
+
+```html
+  x-data="{
+    // just a grey comment
+    open: false
+  }"
+```
+
 ## Supported comments
 
 ```js
@@ -16,11 +25,18 @@ Add Javascript syntax highlighting for [Alpine JS](https://alpinejs.dev/) `x-` a
 // javascript
 // MARK: js
 // MARK: javascript
+// #region js
+// #region javascript
 /* js */
 /* javascript */
 /* MARK: js */
 /* MARK: javascript */
+/* #region js */
+/* #region javascript */
 ```
+
+> ⚠️ **Section headers don't show in the minimap**   
+> Vscode support for section headers triggered in embedded languages is not well documented.
 
 ## Supported Files
 
