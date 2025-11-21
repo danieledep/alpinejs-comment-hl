@@ -5,11 +5,10 @@
 	"author": "Daniele De Pietri",
 	"license": "MIT",
 	"version": "0.0.1",
-	"icon": "assets/alpine_logo.png",
 	"publisher": "danieledep",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/Sperovita/alpinejs-syntax-highlight.git"
+		"url": "https://github.com/danieledep/alpinejs-mark-syntax-highlight"
 	},
 	"keywords": [
 		"alpine",
@@ -22,6 +21,11 @@
 	"categories": [
 		"Programming Languages"
 	],
+	"scripts": {
+		"build": "vsce package",
+		"publish": "vsce publish"
+	},
+	"icon": "images/icon.png",
 	"contributes": {
 		"languages": [
 			{
