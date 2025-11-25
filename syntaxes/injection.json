@@ -15,70 +15,95 @@
   ],
   "repository": {
     "alpine-directives": {
-      "name": "meta.attribute.alpine",
-      "begin": "(?:\\b(x-)|(:|@|#))([a-zA-Z0-9\\-_]+)(?:\\:([a-zA-Z\\-_]+))?(?:\\.([a-zA-Z0-9\\-_]+(?:\\.[a-zA-Z0-9\\-_]+)*))?\\s*(=)",
-      "end": "(?=[\\s<>`])",
-      "captures": {
-        "1": {
-          "name": "entity.other.attribute-name.html"
-        },
-        "2": {
-          "name": "entity.other.attribute-name.html"
-        },
-        "3": {
-          "name": "entity.other.attribute-name.html"
-        },
-        "4": {
-          "name": "entity.other.attribute-name.html"
-        },
-        "5": {
-          "name": "entity.other.attribute-name.html"
-        },
-        "6": {
-          "name": "punctuation.separator.key-value.html"
-        }
-      },
       "patterns": [
         {
-          "begin": "\"",
-          "end": "\"",
-          "beginCaptures": {
-            "0": {
-              "name": "string.quoted.double.html punctuation.definition.string.begin.html"
-            }
-          },
-          "endCaptures": {
-            "0": {
-              "name": "string.quoted.double.html punctuation.definition.string.end.html"
+          "name": "meta.attribute.alpine",
+          "begin": "(?:\\b(x-)|(:|@|#))([a-zA-Z0-9\\-_]+)(?:(\\:[a-zA-Z\\-_]+))?((?:\\.[a-zA-Z0-9\\-_]+)+)?\\s*(=)",
+          "end": "(?<=\")|(?=[\\s<>`])",
+          "captures": {
+            "1": {
+              "name": "entity.other.attribute-name.html"
+            },
+            "2": {
+              "name": "entity.other.attribute-name.html"
+            },
+            "3": {
+              "name": "entity.other.attribute-name.html"
+            },
+            "4": {
+              "name": "entity.other.attribute-name.html"
+            },
+            "5": {
+              "name": "entity.other.attribute-name.html"
+            },
+            "6": {
+              "name": "punctuation.separator.key-value.html"
             }
           },
           "patterns": [
             {
-              "begin": "\\{?(?=\\s*(?://|/\\*)\\s*(?:#region|MARK:)?\\s*(?:javascript|js))",
-              "end": "(?=\")",
-              "contentName": "meta.embedded.inline.alpinejs",
+              "begin": "\"",
+              "end": "\"",
+              "beginCaptures": {
+                "0": {
+                  "name": "string.quoted.double.html punctuation.definition.string.begin.html"
+                }
+              },
+              "endCaptures": {
+                "0": {
+                  "name": "string.quoted.double.html punctuation.definition.string.end.html"
+                }
+              },
               "patterns": [
                 {
-                  "include": "source.js"
+                  "begin": "\\{?(?=\\s*(?://|/\\*)\\s*(?:#region|MARK:)?\\s*(?:javascript|js))",
+                  "end": "(?=\")",
+                  "contentName": "meta.embedded.inline.alpinejs",
+                  "patterns": [
+                    {
+                      "include": "source.js"
+                    }
+                  ]
+                },
+                {
+                  "match": "(.*?)((?:(?<!:)//|/\\*)[^\r\n]*)",
+                  "captures": {
+                    "1": {
+                      "name": "string.quoted.double.html"
+                    },
+                    "2": {
+                      "name": "comment.line.double-slash.js meta.block.js meta.embedded.inline.alpinejs"
+                    }
+                  }
+                },
+                {
+                  "match": "[^\"\\{]+|\\{(?!%\\s*comment|#)",
+                  "name": "string.quoted.double.html"
                 }
               ]
-            },
-            {
-              "match": "(.*?)((?:(?<!:)//|/\\*)[^\r\n]*)",
-              "captures": {
-                "1": {
-                  "name": "string.quoted.double.html"
-                },
-                "2": {
-                  "name": "comment.line.double-slash.js meta.block.js meta.embedded.inline.alpinejs"
-                }
-              }
-            },
-            {
-              "match": "[^\"\\{]+|\\{(?!%\\s*comment|#)",
-              "name": "string.quoted.double.html"
             }
           ]
+        },
+        {
+          "name": "meta.attribute.alpine",
+          "match": "(?:\\b(x-)|(:|@|#))([a-zA-Z0-9\\-_]+)(?:(\\:[a-zA-Z\\-_]+))?((?:\\.[a-zA-Z0-9\\-_]+)+)?(?=\\s|>|/>)",
+          "captures": {
+            "1": {
+              "name": "entity.other.attribute-name.html"
+            },
+            "2": {
+              "name": "entity.other.attribute-name.html"
+            },
+            "3": {
+              "name": "entity.other.attribute-name.html"
+            },
+            "4": {
+              "name": "entity.other.attribute-name.html"
+            },
+            "5": {
+              "name": "entity.other.attribute-name.html"
+            }
+          }
         }
       ]
     }
