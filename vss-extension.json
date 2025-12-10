@@ -1,13 +1,13 @@
 {
   "manifestVersion": 1,
   "id": "alpinejs-comment-hl",
-  "version": "0.0.3",
-  "name": "Alpine JS Comment Highlight",
+  "version": "0.0.4",
+  "name": "AlpineJS Comment Highlight",
   "publisher": "danieledep",
   "description": "Add Javascript syntax highlighting for Alpine.js x- attributes by adding a comment",
   "repository": {
     "type": "git",
-    "uri": "https://github.com/danieledep/alpinejs-syntax-hl-comment"
+    "uri": "https://github.com/danieledep/alpinejs-comment-hl"
   },
   "categories": [
     "Programming Languages"
