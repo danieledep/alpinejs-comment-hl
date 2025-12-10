@@ -1,6 +1,6 @@
 {
-	"name": "alpinejs-syntax-hl-comment",
-	"displayName": "Alpine JS Comment Syntax Highlight",
+	"name": "alpinejs-comment-hl",
+	"displayName": "Alpine JS Comment Highlight",
 	"description": "Add Javascript syntax highlighting for Alpine.js x- attributes by adding a comment",
 	"author": "Daniele De Pietri",
 	"license": "MIT",
