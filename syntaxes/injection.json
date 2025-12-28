@@ -66,13 +66,13 @@
                   ]
                 },
                 {
-                  "match": "(.*?)((?:(?<!:)//|/\\*)[^\r\n]*)",
+                  "match": "([^\"]*?)((?:(?<!:)//|/\\*).*)",
                   "captures": {
                     "1": {
                       "name": "string.quoted.double.html"
                     },
                     "2": {
-                      "name": "comment.line.double-slash.js meta.block.js meta.embedded.inline.alpinejs"
+                      "name": "comment.line.double-slash.js"
                     }
                   }
                 },
