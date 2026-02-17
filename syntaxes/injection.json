@@ -2,6 +2,7 @@
   "scopeName": "html.alpinejs.attribute",
   "injectionSelector": [
     "L:text.html.derivative -comment",
+    "L:text.html.blade -comment",
     "L:text.html.jinja -comment",
     "L:text.html.liquid -comment",
     "L:text.html.nunjucks -comment",

@@ -4,7 +4,7 @@
 	"description": "Add Javascript syntax highlighting for Alpine.js x- attributes by adding a comment",
 	"author": "Daniele De Pietri",
 	"license": "MIT",
-	"version": "0.0.5",
+	"version": "0.0.6",
 	"publisher": "danieledep",
 	"repository": {
 		"type": "git",
@@ -15,15 +15,33 @@
 		"alpinejs",
 		"alpine.js"
 	],
+	"main": "./out/extension.js",
 	"engines": {
 		"vscode": "^1.63.0"
 	},
+	"activationEvents": [
+		"onLanguage:html",
+		"onLanguage:blade",
+		"onLanguage:php",
+		"onLanguage:jinja-html",
+		"onLanguage:liquid",
+		"onLanguage:nunjucks",
+		"onLanguage:twig"
+	],
 	"categories": [
 		"Programming Languages"
 	],
 	"scripts": {
-		"build": "vsce package",
-		"publish": "vsce publish"
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"build": "npm run compile && vsce package",
+		"publish": "npm run compile && vsce publish"
+	},
+	"devDependencies": {
+		"@types/node": "^18.0.0",
+		"@types/vscode": "^1.63.0",
+		"@vscode/vsce": "^3.7.1",
+		"typescript": "^5.0.0"
 	},
 	"icon": "images/icon.png",
 	"contributes": {
@@ -51,6 +69,7 @@
 				"scopeName": "html.alpinejs.attribute",
 				"injectTo": [
 					"text.html.derivative",
+					"text.html.blade",
 					"text.html.jinja",
 					"text.html.liquid",
 					"text.html.nunjucks",
