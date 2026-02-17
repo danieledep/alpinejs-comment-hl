@@ -1,12 +1,12 @@
 {
   "scopeName": "html.alpinejs.attribute",
   "injectionSelector": [
-    "L:text.html.derivative",
-    "L:text.html.jinja",
-    "L:text.html.liquid",
-    "L:text.html.nunjucks",
-    "L:text.html.php",
-    "L:text.html.twig"
+    "L:text.html.derivative -comment",
+    "L:text.html.jinja -comment",
+    "L:text.html.liquid -comment",
+    "L:text.html.nunjucks -comment",
+    "L:text.html.php -comment",
+    "L:text.html.twig -comment"
   ],
   "patterns": [
     {
