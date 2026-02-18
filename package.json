@@ -4,7 +4,7 @@
 	"description": "Add Javascript syntax highlighting for Alpine.js x- attributes by adding a comment. Greys out inline comments and makes external components linkable.",
 	"author": "Daniele De Pietri",
 	"license": "MIT",
-	"version": "0.0.7",
+	"version": "0.0.8",
 	"publisher": "danieledep",
 	"repository": {
 		"type": "git",
@@ -26,6 +26,7 @@
 		"onLanguage:jinja-html",
 		"onLanguage:liquid",
 		"onLanguage:nunjucks",
+		"onLanguage:njk",
 		"onLanguage:twig"
 	],
 	"categories": [
@@ -73,6 +74,7 @@
 					"text.html.jinja",
 					"text.html.liquid",
 					"text.html.nunjucks",
+					"text.html.njk",
 					"text.html.php",
 					"text.html.twig"
 				],

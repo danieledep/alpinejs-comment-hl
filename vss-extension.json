@@ -1,7 +1,7 @@
 {
   "manifestVersion": 1,
   "id": "alpinejs-comment-hl",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "name": "AlpineJS Comment Highlight",
   "publisher": "danieledep",
   "description": "Add Javascript syntax highlighting for Alpine.js x- attributes by adding a comment. Greys out inline comments and makes external components linkable.",
@@ -41,6 +41,7 @@
           "text.html.jinja",
           "text.html.liquid",
           "text.html.nunjucks",
+          "text.html.njk",
           "text.html.php",
           "text.html.twig"
         ],

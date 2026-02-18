@@ -6,6 +6,7 @@
     "L:text.html.jinja -comment",
     "L:text.html.liquid -comment",
     "L:text.html.nunjucks -comment",
+    "L:text.html.njk -comment",
     "L:text.html.php -comment",
     "L:text.html.twig -comment"
   ],
@@ -57,7 +58,7 @@
               },
               "patterns": [
                 {
-                  "begin": "\\{?(?=\\s*(?://|/\\*)\\s*(?:#region|MARK:)?\\s*(?:javascript|js))",
+                  "begin": "\\{?(?=\\s*(?://|/\\*)\\s*(?:#region|MARK:)?\\s*(?:javascript|js|JS))",
                   "end": "(?=\")",
                   "contentName": "meta.embedded.inline.alpinejs",
                   "patterns": [
@@ -65,6 +66,11 @@
                       "include": "source.js"
                     }
                   ]
+                },
+                {
+                  "begin": "\\{#",
+                  "end": "#\\}",
+                  "name": "comment.block"
                 },
                 {
                   "match": "([^\"]*?)((?:(?<!:)//|/\\*).*)",

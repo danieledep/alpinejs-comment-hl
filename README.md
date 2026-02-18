@@ -35,9 +35,6 @@ It also adds normal greyed-out comments inside the `x-` attributes.
 /* #region javascript */
 ```
 
-> ⚠️ **Section headers don't show in the minimap**   
-> Vscode doesn't support yet section headers triggered in embedded languages.
-
 ## Component linking
 
 When you use an external Alpine component via `x-data`, the extension creates a clickable link on the component name. Cmd+click (or Ctrl+click) navigates directly to the component file.
