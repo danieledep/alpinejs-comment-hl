@@ -11,27 +11,23 @@ export class AlpineDataDocumentLinkProvider implements vscode.DocumentLinkProvid
 		_token: vscode.CancellationToken
 	): AlpineComponentLink[] {
 		const links: AlpineComponentLink[] = [];
-		const regex = /x-data\s*=\s*["']([a-zA-Z_$][\w$]*)/g;
+		const fullText = document.getText();
+		const regex = /x-data\s*=\s*["'][\s\r\n]*([a-zA-Z_$][\w$]*)/g;
 
-		for (let i = 0; i < document.lineCount; i++) {
-			const line = document.lineAt(i).text;
-			let match: RegExpExecArray | null;
+		let match: RegExpExecArray | null;
+		while ((match = regex.exec(fullText)) !== null) {
+			const name = match[1];
+			const nameOffset = match.index + match[0].indexOf(name);
+			const nameStart = document.positionAt(nameOffset);
+			const nameEnd = document.positionAt(nameOffset + name.length);
 
-			while ((match = regex.exec(line)) !== null) {
-				const fullMatch = match[0];
-				const name = match[1];
-				const nameStart = match.index + fullMatch.indexOf(name);
-				const nameEnd = nameStart + name.length;
-
-				const range = new vscode.Range(i, nameStart, i, nameEnd);
-				const link: AlpineComponentLink = Object.assign(
-					new vscode.DocumentLink(range),
-					{ componentName: name }
-				);
-				link.tooltip = `Open ${name} component`;
-				links.push(link);
-			}
-			regex.lastIndex = 0;
+			const range = new vscode.Range(nameStart, nameEnd);
+			const link: AlpineComponentLink = Object.assign(
+				new vscode.DocumentLink(range),
+				{ componentName: name }
+			);
+			link.tooltip = `Open ${name} component`;
+			links.push(link);
 		}
 
 		return links;

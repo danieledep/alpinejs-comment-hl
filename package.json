@@ -1,10 +1,10 @@
 {
 	"name": "alpinejs-comment-hl",
 	"displayName": "AlpineJS Comment Highlight",
-	"description": "Add Javascript syntax highlighting for Alpine.js x- attributes by adding a comment",
+	"description": "Add Javascript syntax highlighting for Alpine.js x- attributes by adding a comment. Greys out inline comments and makes external components linkable.",
 	"author": "Daniele De Pietri",
 	"license": "MIT",
-	"version": "0.0.6",
+	"version": "0.0.7",
 	"publisher": "danieledep",
 	"repository": {
 		"type": "git",

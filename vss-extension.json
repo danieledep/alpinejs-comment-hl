@@ -1,10 +1,10 @@
 {
   "manifestVersion": 1,
   "id": "alpinejs-comment-hl",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "name": "AlpineJS Comment Highlight",
   "publisher": "danieledep",
-  "description": "Add Javascript syntax highlighting for Alpine.js x- attributes by adding a comment",
+  "description": "Add Javascript syntax highlighting for Alpine.js x- attributes by adding a comment. Greys out inline comments and makes external components linkable.",
   "repository": {
     "type": "git",
     "uri": "https://github.com/danieledep/alpinejs-comment-hl"
@@ -37,6 +37,7 @@
         "scopeName": "html.alpinejs.attribute",
         "injectTo": [
           "text.html.derivative",
+          "text.html.blade",
           "text.html.jinja",
           "text.html.liquid",
           "text.html.nunjucks",
