@@ -22,16 +22,16 @@ It also adds normal greyed-out comments inside the `x-` attributes.
 
 ```js
 // js
-// javascript
-// MARK: js
-// MARK: javascript
-// #region js
-// #region javascript
 /* js */
+// javascript
 /* javascript */
+// MARK: js
 /* MARK: js */
+// MARK: javascript
 /* MARK: javascript */
+// #region js
 /* #region js */
+// #region javascript
 /* #region javascript */
 ```
 
