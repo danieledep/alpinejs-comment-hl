@@ -73,6 +73,127 @@
                   "name": "comment.block"
                 },
                 {
+                  "begin": "\\{\\{-?",
+                  "end": "-?\\}\\}",
+                  "name": "meta.tag.template.value.twig",
+                  "beginCaptures": {
+                    "0": {
+                      "name": "punctuation.section.tag.twig"
+                    }
+                  },
+                  "endCaptures": {
+                    "0": {
+                      "name": "punctuation.section.tag.twig"
+                    }
+                  },
+                  "patterns": [
+                    {
+                      "include": "text.html.twig#twig-constants"
+                    },
+                    {
+                      "include": "text.html.twig#twig-operators"
+                    },
+                    {
+                      "include": "text.html.twig#twig-functions-warg"
+                    },
+                    {
+                      "include": "text.html.twig#twig-functions"
+                    },
+                    {
+                      "include": "text.html.twig#twig-macros"
+                    },
+                    {
+                      "include": "text.html.twig#twig-objects"
+                    },
+                    {
+                      "include": "text.html.twig#twig-properties"
+                    },
+                    {
+                      "include": "text.html.twig#twig-filters-warg"
+                    },
+                    {
+                      "include": "text.html.twig#twig-filters"
+                    },
+                    {
+                      "include": "text.html.twig#twig-filters-warg-ud"
+                    },
+                    {
+                      "include": "text.html.twig#twig-filters-ud"
+                    },
+                    {
+                      "include": "text.html.twig#twig-strings"
+                    },
+                    {
+                      "include": "text.html.twig#twig-arrays"
+                    },
+                    {
+                      "include": "text.html.twig#twig-hashes"
+                    }
+                  ]
+                },
+                {
+                  "begin": "\\{%-?",
+                  "end": "-?%\\}",
+                  "name": "meta.tag.template.block.twig",
+                  "beginCaptures": {
+                    "0": {
+                      "name": "punctuation.section.tag.twig"
+                    }
+                  },
+                  "endCaptures": {
+                    "0": {
+                      "name": "punctuation.section.tag.twig"
+                    }
+                  },
+                  "patterns": [
+                    {
+                      "include": "text.html.twig#twig-constants"
+                    },
+                    {
+                      "include": "text.html.twig#twig-keywords"
+                    },
+                    {
+                      "include": "text.html.twig#twig-operators"
+                    },
+                    {
+                      "include": "text.html.twig#twig-functions-warg"
+                    },
+                    {
+                      "include": "text.html.twig#twig-functions"
+                    },
+                    {
+                      "include": "text.html.twig#twig-macros"
+                    },
+                    {
+                      "include": "text.html.twig#twig-filters-warg"
+                    },
+                    {
+                      "include": "text.html.twig#twig-filters"
+                    },
+                    {
+                      "include": "text.html.twig#twig-filters-warg-ud"
+                    },
+                    {
+                      "include": "text.html.twig#twig-filters-ud"
+                    },
+                    {
+                      "include": "text.html.twig#twig-objects"
+                    },
+                    {
+                      "include": "text.html.twig#twig-properties"
+                    },
+                    {
+                      "include": "text.html.twig#twig-strings"
+                    },
+                    {
+                      "include": "text.html.twig#twig-arrays"
+                    },
+                    {
+                      "include": "text.html.twig#twig-hashes"
+                    }
+                  ]
+                },
+                {
                   "match": "([^\"]*?)((?:(?<!:)//|/\\*).*)",
                   "captures": {
                     "1": {
@@ -84,7 +205,7 @@
                   }
                 },
                 {
-                  "match": "[^\"\\{]+|\\{(?!%\\s*comment|#)",
+                  "match": "[^\"\\{]+|\\{(?!%|#|\\{)",
                   "name": "string.quoted.double.html"
                 }
               ]
