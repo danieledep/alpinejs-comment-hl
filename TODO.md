@@ -58,7 +58,7 @@ text.html.twig
 foreground	string
 
 
-With extension disabled
+With extension disabled in twig
 
 {{2 chars
 language	twig
