@@ -1,5 +1,5 @@
 import * as vscode from "vscode";
-import { findComponentFiles, XDATA_REGEX } from "./alpineUtils";
+import { findComponentFiles, findXDataComponentNames } from "./alpineUtils";
 
 interface AlpineComponentLink extends vscode.DocumentLink {
 	componentName: string;
@@ -12,19 +12,16 @@ export class AlpineDataDocumentLinkProvider implements vscode.DocumentLinkProvid
 	): AlpineComponentLink[] {
 		const links: AlpineComponentLink[] = [];
 		const fullText = document.getText();
-		const regex = new RegExp(XDATA_REGEX.source, XDATA_REGEX.flags);
+		const matches = findXDataComponentNames(fullText);
 
-		let match: RegExpExecArray | null;
-		while ((match = regex.exec(fullText)) !== null) {
-			const name = match[1];
-			const nameOffset = match.index + match[0].indexOf(name);
-			const nameStart = document.positionAt(nameOffset);
-			const nameEnd = document.positionAt(nameOffset + name.length);
+		for (const m of matches) {
+			const nameStart = document.positionAt(m.offset);
+			const nameEnd = document.positionAt(m.offset + m.length);
 
 			const range = new vscode.Range(nameStart, nameEnd);
 			const link: AlpineComponentLink = Object.assign(
 				new vscode.DocumentLink(range),
-				{ componentName: name },
+				{ componentName: m.name },
 			);
 			links.push(link);
 		}
