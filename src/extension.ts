@@ -1,6 +1,7 @@
 import * as vscode from 'vscode';
 import { AlpineDataDocumentLinkProvider } from './documentLinkProvider';
 import { AlpineDataHoverProvider } from './hoverProvider';
+import { setupAlpineDiagnostics } from './diagnosticProvider';
 
 const SUPPORTED_LANGUAGES = [
 	'html', 'php', 'blade', 'jinja-html', 'liquid', 'nunjucks', 'twig'
@@ -22,6 +23,8 @@ export function activate(context: vscode.ExtensionContext) {
 			new AlpineDataHoverProvider()
 		)
 	);
+
+	setupAlpineDiagnostics(context, SUPPORTED_LANGUAGES);
 }
 
 export function deactivate() {}

@@ -4,7 +4,7 @@
 	"description": "Add Javascript syntax highlighting for Alpine.js x- attributes by adding a comment. Greys out inline comments and makes external components linkable.",
 	"author": "Daniele De Pietri",
 	"license": "MIT",
-	"version": "0.0.10",
+	"version": "0.0.11",
 	"publisher": "danieledep",
 	"repository": {
 		"type": "git",
@@ -63,6 +63,40 @@
 				}
 			}
 		},
+		"snippets": [
+			{
+				"language": "html",
+				"path": "./snippets/alpinejs.code-snippets"
+			},
+			{
+				"language": "blade",
+				"path": "./snippets/alpinejs.code-snippets"
+			},
+			{
+				"language": "php",
+				"path": "./snippets/alpinejs.code-snippets"
+			},
+			{
+				"language": "jinja-html",
+				"path": "./snippets/alpinejs.code-snippets"
+			},
+			{
+				"language": "liquid",
+				"path": "./snippets/alpinejs.code-snippets"
+			},
+			{
+				"language": "nunjucks",
+				"path": "./snippets/alpinejs.code-snippets"
+			},
+			{
+				"language": "njk",
+				"path": "./snippets/alpinejs.code-snippets"
+			},
+			{
+				"language": "twig",
+				"path": "./snippets/alpinejs.code-snippets"
+			}
+		],
 		"grammars": [
 			{
 				"language": "inline-alpinejs",

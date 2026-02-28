@@ -1,0 +1,44 @@
+{
+	":class": {
+		"prefix": ":class",
+		"body": ":class=\"{ '$1': $2 }\"",
+		"description": "Alpine.js x-bind class directive shorthand"
+	},
+	":style": {
+		"prefix": ":style",
+		"body": ":style=\"$1 && { $2: '$3' }\"",
+		"description": "Alpine.js x-bind style directive shorthand"
+	},
+	"@keydown": {
+		"prefix": "@keydown",
+		"body": "@keydown.escape.window=\"$1\"",
+		"description": "Alpine.js @keydown event for escape key"
+	},
+	"x-data": {
+		"prefix": "x-data",
+		"body": "x-data=\"\n\t{\n\t\t$1\n\t}\n\"",
+		"description": "Alpine.js x-data directive"
+	},
+	"x-for": {
+		"prefix": "x-for",
+		"body": "<template x-for=\"($1, index) in $2\">\n\t$3\n</template>",
+		"description": "Alpine.js x-for directive"
+	},
+	"x-if": {
+		"prefix": "x-if",
+		"body": "<template x-if=\"$1\">\n\t$2\n</template>",
+		"description": "Alpine.js x-if directive"
+	},
+	"x-transition": {
+		"prefix": "x-transition",
+		"body": [
+			"x-transition:enter=\"$1\"",
+			"x-transition:enter-start=\"$2\"",
+			"x-transition:enter-end=\"$3\"",
+			"x-transition:leave=\"$4\"",
+			"x-transition:leave-start=\"$5\"",
+			"x-transition:leave-end=\"$6\""		
+		],
+		"description": "Alpine.js x-transition directive"
+	}
+}
